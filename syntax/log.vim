@@ -61,12 +61,15 @@ syn match logFilePath   '\/\w[^\n|,; ()'"]\+'
 
 " XML Tags
 "---------------------------------------------------------------------------
-" TODO: Highlight attributes and symbols inside tags differently
-" TODO: Consider matching multiline tags
-syn match logXmlHeader #<?\w\+\(\s\+\w\+\(="[^"]*"\|='[^']*'\)\?\)*?>#
-syn match logXmlTag #<\/\?\(\w\+:\)\?\w\+\(\s\+\w\+\(="[^"]*"\|="[^"]*"\)\?\)*\s*\/\?>#
-syn match logXmlComment '<!--.*-->'
-syn match logXmlCData '<!\[CDATA\[.*\]\]>'
+syn match logXmlHeader       /<?\w\+\(\s\+\w\+\(="[^"]*"\|='[^']*'\)\?\)*?>/ contains=logString,logXmlAttribute,logXmlNamespace
+syn match logXmlDoctype      /<!DOCTYPE[^>]*>/ contains=logString,logXmlAttribute,logXmlNamespace
+
+syn match logXmlTag          /<\/\?\(\w\+:\)\?\w\+\(\(\n\|\s\)\+\(\w\+:\)\?\w\+\(="[^"]*"\|="[^"]*"\)\?\)*\s*\/\?>/ contains=logString,logXmlAttribute,logXmlNamespace
+syn match logXmlAttribute    contained "\w\+=" contains=logOperator
+syn match logXmlAttribute    contained "\(\n\|\s\)\(\w\+:\)\?\w\+" contains=logXmlNamespace,logOperator
+syn match logXmlNamespace    contained "\w\+:" contains=logOperator
+syn region logXmlComment     start=/<!--/ end=/-->/
+syn match logXmlCData        /<!\[CDATA\[.*\]\]>/
 
 
 " Levels
@@ -102,7 +105,10 @@ hi def link logMacAddress Label
 hi def link logFilePath Conditional
 
 hi def link logXmlHeader Function
-hi def link logXmlTag Special
+hi def link logXmlDoctype Function
+hi def link logXmlTag Identifier
+hi def link logXmlAttribute Type
+hi def link logXmlNamespace Include
 hi def link logXmlComment Comment
 hi def link logXmlCData String
 
