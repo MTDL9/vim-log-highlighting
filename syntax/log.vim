@@ -76,8 +76,10 @@ syn match logXmlEntity       /\&\w\+;/
 
 " Levels
 "---------------------------------------------------------------------------
+syn keyword logLevelEmergency EMERGENCY EMERG
+syn keyword logLevelAlert ALERT
 syn keyword logLevelCritical CRITICAL CRIT FATAL
-syn keyword logLevelError ERROR FAILURE SEVERE
+syn keyword logLevelError ERROR ERR FAILURE SEVERE
 syn keyword logLevelWarning WARNING WARN
 syn keyword logLevelNotice NOTICE
 syn keyword logLevelInfo INFO
@@ -119,6 +121,8 @@ hi def link logOperator Operator
 hi def link logBrackets Comment
 hi def link logEmptyLines Comment
 
+hi def link logLevelEmergency ErrorMsg
+hi def link logLevelAlert ErrorMsg
 hi def link logLevelCritical ErrorMsg
 hi def link logLevelError ErrorMsg
 hi def link logLevelWarning WarningMsg
