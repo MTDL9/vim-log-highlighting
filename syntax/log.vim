@@ -70,6 +70,7 @@ syn match logXmlAttribute    contained "\(\n\|\s\)\(\w\+:\)\?\w\+" contains=logX
 syn match logXmlNamespace    contained "\w\+:" contains=logOperator
 syn region logXmlComment     start=/<!--/ end=/-->/
 syn match logXmlCData        /<!\[CDATA\[.*\]\]>/
+syn match logXmlEntity       /\&\w\+;/
 
 
 " Levels
@@ -111,6 +112,7 @@ hi def link logXmlAttribute Type
 hi def link logXmlNamespace Include
 hi def link logXmlComment Comment
 hi def link logXmlCData String
+hi def link logXmlEntity Special
 
 hi def link logOperator Operator
 hi def link logBrackets Comment
