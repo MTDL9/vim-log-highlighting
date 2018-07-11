@@ -61,13 +61,14 @@ syn match logFilePath   '\/\w[^\n|,; ()'"]\+'
 
 " XML Tags
 "---------------------------------------------------------------------------
-syn match logXmlHeader       /<?\w\+\(\s\+\w\+\(="[^"]*"\|='[^']*'\)\?\)*?>/ contains=logString,logXmlAttribute,logXmlNamespace
+" Simplified matches, not accurate with the spec to avoid false positives
+syn match logXmlHeader       /<?\(\w\|-\)\+\(\s\+\w\+\(="[^"]*"\|='[^']*'\)\?\)*?>/ contains=logString,logXmlAttribute,logXmlNamespace
 syn match logXmlDoctype      /<!DOCTYPE[^>]*>/ contains=logString,logXmlAttribute,logXmlNamespace
 
-syn match logXmlTag          /<\/\?\(\w\+:\)\?\w\+\(\(\n\|\s\)\+\(\w\+:\)\?\w\+\(="[^"]*"\|="[^"]*"\)\?\)*\s*\/\?>/ contains=logString,logXmlAttribute,logXmlNamespace
+syn match logXmlTag          /<\/\?\(\(\w\|-\)\+:\)\?\(\w\|-\)\+\(\(\n\|\s\)\+\(\(\w\|-\)\+:\)\?\(\w\|-\)\+\(="[^"]*"\|="[^"]*"\)\?\)*\s*\/\?>/ contains=logString,logXmlAttribute,logXmlNamespace
 syn match logXmlAttribute    contained "\w\+=" contains=logOperator
-syn match logXmlAttribute    contained "\(\n\|\s\)\(\w\+:\)\?\w\+" contains=logXmlNamespace,logOperator
-syn match logXmlNamespace    contained "\w\+:" contains=logOperator
+syn match logXmlAttribute    contained "\(\n\|\s\)\(\(\w\|-\)\+:\)\?\(\w\|-\)\+\(=\)\?" contains=logXmlNamespace,logOperator
+syn match logXmlNamespace    contained "\(\w\|-\)\+:" contains=logOperator
 syn region logXmlComment     start=/<!--/ end=/-->/
 syn match logXmlCData        /<!\[CDATA\[.*\]\]>/
 syn match logXmlEntity       /\&\w\+;/
