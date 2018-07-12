@@ -132,7 +132,7 @@ hi def link logLevelCritical ErrorMsg
 hi def link logLevelError ErrorMsg
 hi def link logLevelWarning WarningMsg
 hi def link logLevelNotice Character
-hi def link logLevelInfo Function
+hi def link logLevelInfo Repeat
 hi def link logLevelDebug Debug
 hi def link logLevelTrace Comment
 
