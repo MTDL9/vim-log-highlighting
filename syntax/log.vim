@@ -53,13 +53,14 @@ syn match logTime '\d\{2}:\d\{2}:\d\{2}\(.\d\{2,6}\)\?\(\s\?[-+]\d\{2,4}\|Z\)\?\
 " Entities
 "---------------------------------------------------------------------------
 syn match logUrl        'http[s]\?:\/\/[^\n|,; '"]\+'
+syn match logDomain     /\v(^|\s)(\w|-)+(\.(\w|-)+)+\s/
 syn match logUUID       '\w\{8}-\w\{4}-\w\{4}-\w\{4}-\w\{12}'
 syn match logMD5        '\<[a-z0-9]\{32}\>'
 syn match logIPV4       '\<\d\{1,3}\(\.\d\{1,3}\)\{3}\>'
 syn match logIPV6       '\<\x\{1,4}\(:\x\{1,4}\)\{7}\>'
 syn match logMacAddress '\<\x\{2}\(:\x\{2}\)\{5}'
-syn match logFilePath   '\<\w:\\[^\n|,; ()'"]\+'
-syn match logFilePath   '\/\w[^\n|,; ()'"]\+'
+syn match logFilePath   '\<\w:\\[^\n|,; ()'"\]{}]\+'
+syn match logFilePath   '\/\w[^\n|,; ()'"\]{}]\+'
 
 
 " XML Tags
@@ -104,6 +105,7 @@ hi def link logDate Identifier
 hi def link logTime Function
 
 hi def link logUrl Underlined
+hi def link logDomain Label
 hi def link logUUID Label
 hi def link logMD5 Label
 hi def link logIPV4 Label
