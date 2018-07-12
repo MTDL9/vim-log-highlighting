@@ -15,7 +15,10 @@ set cpoptions&vim
 "---------------------------------------------------------------------------
 syn match logOperator display '[;,\?\:\.\<=\>\~\/\@\&\!$\%\&\+\-\|\^(){}\*]'
 syn match logBrackets display '[\[\]]'
-syn match logEmptyLines display '---\-*'
+syn match logEmptyLines display '-\{3,}'
+syn match logEmptyLines display '\*\{3,}'
+syn match logEmptyLines display '=\{3,}'
+syn match logEmptyLines display '- - '
 
 
 " Constants
