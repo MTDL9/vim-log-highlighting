@@ -1,5 +1,7 @@
 # Vim Log Highlighting
 
+![Log highlighting example](doc/screenshot.jpg)
+
 ## Overview
 
 Provides syntax highlighting for generic log files in VIM.
