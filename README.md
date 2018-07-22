@@ -18,7 +18,7 @@ Some of the highlighted elements are:
 
 ## Installation
 
-### [VimPlug](https://github.com/gmarik/Vundle.vim)
+### [VimPlug](https://github.com/junegunn/vim-plug)
 
 Add `Plug 'mtdl9/vim-log-highlighting'` to your `~/.vimrc` and run `PlugInstall`.
 
@@ -60,5 +60,5 @@ syn clear logUrl
 ## Related Projects
 
 * VIM Built-in /var/log/messages highlighting
-* [vim-log-syntax by dzeban](https://github.com/dzeban/vim-log-syntax)
-* [vim-log4j by tetsuo13](https://github.com/tetsuo13/Vim-log4j)
+* [vim-log-syntax](https://github.com/dzeban/vim-log-syntax) by dzeban
+* [vim-log4j](https://github.com/tetsuo13/Vim-log4j) by tetsuo13
