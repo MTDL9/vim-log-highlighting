@@ -62,3 +62,4 @@ syn clear logUrl
 * VIM Built-in /var/log/messages highlighting
 * [vim-log-syntax](https://github.com/dzeban/vim-log-syntax) by dzeban
 * [vim-log4j](https://github.com/tetsuo13/Vim-log4j) by tetsuo13
+* [ccze](https://github.com/cornet/ccze) by cornet
