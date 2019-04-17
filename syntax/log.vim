@@ -53,7 +53,6 @@ syn match logTime '\d\{2}:\d\{2}:\d\{2}\(.\d\{2,6}\)\?\(\s\?[-+]\d\{2,4}\|Z\)\?\
 syn match logTimeZone '\(UTC\|PDT\|EDT\|GMT\|EST\|KST\)\( \d\{4}\)\?' contained
 
 
-
 " Entities
 "---------------------------------------------------------------------------
 syn match logUrl        'http[s]\?:\/\/[^\n|,; '"]\+'
@@ -70,9 +69,8 @@ syn match logFilePath   '\/\w[^\n|,; ()'"\]{}]\+'
 " Syslog Columns
 "---------------------------------------------------------------------------
 " Syslog hostname, program and process number columns
-" TODO: Match dashes, dots and underscores in hostname and program columns
-syn match logSysColumns '\w\+ \w\+\(\[\d\+\]\)\?:' contains=logOperator,logSysProcess contained
-syn match logSysProcess '\w\+\(\[\d\+\]\)\?:' contains=logOperator,logNumber,logBrackets contained
+syn match logSysColumns '\w\(\w\|\.\|-\)\+ \(\w\|\.\|-\)\+\(\[\d\+\]\)\?:' contains=logOperator,logSysProcess contained
+syn match logSysProcess '\(\w\|\.\|-\)\+\(\[\d\+\]\)\?:' contains=logOperator,logNumber,logBrackets contained
 
 
 " XML Tags
