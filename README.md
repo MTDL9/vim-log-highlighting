@@ -12,6 +12,7 @@ Some of the highlighted elements are:
 - Numbers, booleans and strings
 - URLs and file paths
 - IP and MAC addresses
+- SysLog format columns
 - XML Tags
 
 
