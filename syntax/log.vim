@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:         Generic log file
 " Maintainer:       MTDL9 <https://github.com/MTDL9>
-" Latest Revision:  2018-07-09
+" Latest Revision:  2019-04-16
 
 if exists('b:current_syntax')
   finish
