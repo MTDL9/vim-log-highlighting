@@ -50,8 +50,8 @@ syn match logDate '\(\(Mon\|Tue\|Wed\|Thu\|Fri\|Sat\|Sun\) \)\?\(Jan\|Feb\|Mar\|
 syn match logTime '\d\{2}:\d\{2}:\d\{2}\(\.\d\{2,6}\)\?\(\s\?[-+]\d\{2,4}\|Z\)\?\>' nextgroup=logTimeZone,logSysColumns skipwhite
 
 " Follows logTime, matches UTC or PDT 2019 or 2019 EDT
-syn match logTimeZone '[A-Z]\{2,5}/>\( \d\{4}\)\?' contained
-syn match logTimeZone '\d\{4} [A-Z]\{2,5}/>' contained
+syn match logTimeZone '[A-Z]\{2,5}\>\( \d\{4}\)\?' contained
+syn match logTimeZone '\d\{4} [A-Z]\{2,5}\>' contained
 
 
 " Entities
