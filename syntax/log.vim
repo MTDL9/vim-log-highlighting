@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:         Generic log file
 " Maintainer:       MTDL9 <https://github.com/MTDL9>
-" Latest Revision:  2019-04-16
+" Latest Revision:  2019-11-24
 
 if exists('b:current_syntax')
   finish
@@ -64,7 +64,7 @@ syn match logIPV4       '\<\d\{1,3}\(\.\d\{1,3}\)\{3}\>'
 syn match logIPV6       '\<\x\{1,4}\(:\x\{1,4}\)\{7}\>'
 syn match logMacAddress '\<\x\{2}\(:\x\{2}\)\{5}'
 syn match logFilePath   '\<\w:\\[^\n|,; ()'"\]{}]\+'
-syn match logFilePath   '\/\w[^\n|,; ()'"\]{}]\+'
+syn match logFilePath   '[^a-zA-Z0-9"']\@<=\/\w[^\n|,; ()'"\]{}]\+'
 
 
 " Syslog Columns
