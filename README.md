@@ -46,14 +46,14 @@ You can add additional log level keywords using the standard VIM syntax function
 
 ```viml
 " Add custom level identifiers
-syn keyword logLevelError MY_CUSTOM_ERROR_KEYWORD
+au rc Syntax log syn keyword logLevelError MY_CUSTOM_ERROR_KEYWORD
 ```
 
 Likewise you can disable highlighting for elements you don't need:
 
 ```viml
 " Remove highlighting for URLs
-syn clear logUrl
+au rc Syntax log syn clear logUrl
 ```
 
 
