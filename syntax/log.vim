@@ -85,7 +85,7 @@ syn match logXmlAttribute    contained "\(\n\|\s\)\(\(\w\|-\)\+:\)\?\(\w\|-\)\+\
 syn match logXmlNamespace    contained "\(\w\|-\)\+:" contains=logOperator
 syn region logXmlComment     start=/<!--/ end=/-->/
 syn match logXmlCData        /<!\[CDATA\[.*\]\]>/
-syn match logXmlEntity       /\&\w\+;/
+syn match logXmlEntity       /&#\?\w\+;/
 
 
 " Levels
