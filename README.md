@@ -39,7 +39,7 @@ Copy the contents of the `ftdetect` and `syntax` folders in their respective ~/.
 
 ## Configuration
 
-Once installed, the syntax highlighting will be enabled by default for files ending with `.log` and `_log` suffixes.
+Once installed, the syntax highlighting will be enabled by default for files ending with `.log` and `_log` suffixes. If it doesn't check that your `.vimrc` contains `syntax on`, without this option the syntax highligting on the editor will be kept off.
 
 By default only uppercase keywords are recognized as level indicators in the log files.
 You can add additional log level keywords using the standard VIM syntax functions, for example by adding this to your `.vimrc` file:
