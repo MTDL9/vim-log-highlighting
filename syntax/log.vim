@@ -54,6 +54,8 @@ syn match logTime '\d\{2}:\d\{2}:\d\{2}\(\.\d\{2,6}\)\?\(\s\?[-+]\d\{2,4}\|Z\)\?
 syn match logTimeZone '[A-Z]\{2,5}\>\( \d\{4}\)\?' contained
 syn match logTimeZone '\d\{4} [A-Z]\{2,5}\>' contained
 
+" Matches time durations like 1ms or 1y 2d 23ns
+syn match logDuration '\(^\|\s\)\@<=\d\+\s*[mn]\?[ywdhms]\(\s\|$\)\@='
 
 " Entities
 "---------------------------------------------------------------------------
@@ -116,6 +118,7 @@ hi def link logDate Identifier
 hi def link logDateDay Identifier
 hi def link logTime Function
 hi def link logTimeZone Identifier
+hi def link logDuration Identifier
 
 hi def link logUrl Underlined
 hi def link logDomain Label
