@@ -155,7 +155,8 @@ hi def link logLevelTrace Comment
 " Conceal Terminal Color Escape Codes
 "---------------------------------------------------------------------------
 syntax match Normal '\[[0-9;]*m' conceal
-setlocal conceallevel=3
+setlocal conceallevel=2
+setlocal concealcursor=n
 
 
 let b:current_syntax = 'log'
