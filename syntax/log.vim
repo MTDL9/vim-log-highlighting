@@ -91,15 +91,15 @@ syn match logXmlEntity       /&#\?\w\+;/
 
 " Levels
 "---------------------------------------------------------------------------
-syn keyword logLevelEmergency EMERGENCY EMERG
-syn keyword logLevelAlert ALERT
-syn keyword logLevelCritical CRITICAL CRIT FATAL
-syn keyword logLevelError ERROR ERR FAILURE SEVERE
-syn keyword logLevelWarning WARNING WARN
-syn keyword logLevelNotice NOTICE
-syn keyword logLevelInfo INFO
-syn keyword logLevelDebug DEBUG FINE
-syn keyword logLevelTrace TRACE FINER FINEST
+syn keyword logLevelEmergency EMERGENCY Emergency EMERG Emerg
+syn keyword logLevelAlert ALERT Alert
+syn keyword logLevelCritical CRITICAL Critical CRIT Crit FATAL Fatal
+syn keyword logLevelError ERROR Error ERR Err FAILURE Failure SEVERE Severe
+syn keyword logLevelWarning WARNING Warning WARN Warn
+syn keyword logLevelNotice NOTICE Notice
+syn keyword logLevelInfo INFO Info
+syn keyword logLevelDebug DEBUG Debug FINE Fine
+syn keyword logLevelTrace TRACE Trace FINER Finer FINEST Finest
 
 
 " Highlight links
